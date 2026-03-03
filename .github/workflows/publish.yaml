@@ -37,6 +37,10 @@ jobs:
         with:
           context: ${{ env.APP_PATH }}
           file: ${{ env.APP_PATH }}/Dockerfile
+          build-args: |
+            BAR_ASSISTANT_URL=${{ secrets.BAR_ASSISTANT_URL }}
+            BAR_ASSISTANT_TOKEN=${{ secrets.BAR_ASSISTANT_TOKEN }}
+            BAR_ASSISTANT_BAR_ID=${{ secrets.BAR_ASSISTANT_BAR_ID }}
           push: true
           provenance: false
           tags: |
